@@ -29,7 +29,7 @@ testAutomation is a Cucumber BDD framework developed with Selenium and Java.
               
 ## To View Execution Report::
 
-    Go to "TestReport" folder just above the pom.xml file.
+    First Refresh the Project Then Go to "TestReport" folder just above the pom.xml file.
     Open the HTML file in browser.You can see execution status of each scenario with stepwise screenshot.
     
     
