@@ -7,6 +7,8 @@ testAutomation is a Cucumber BDD framework developed with Selenium and Java.
 ## Installation
 
 1. Import the project as Maven project in Eclipse IDE.
+    
+   Download the project Zip file from given github url.
 
    Go to File-->Import-->Maven-->Existing Maven Project-->Select the unzipped project from system-->Do next -->next-->Finish.
 
@@ -22,7 +24,7 @@ testAutomation is a Cucumber BDD framework developed with Selenium and Java.
    
 ## Running the Test Script::
 
-    Step:::: Go to (src/main/java)---> Under "com.sogeti.testRunner" package-->Open "SogetiTestRunner.java"--->Right click---> Run as "TestNG Test" option.
+    Step:::: Go to (src/main/java)---> Under "com.stroeer.testRunner" package-->Open "StroeerTestRunner.java"--->Right click---> Run as "TestNG Test" option.
     
               Script will start executing. After Complete Execution, under TestNG tab, green colour will be marked for test.
               
@@ -37,8 +39,8 @@ testAutomation is a Cucumber BDD framework developed with Selenium and Java.
 
 ## Chrome Browser and Chrome Driver Version
 
-     Version 106.0.5249.119(Please use this chrome browser and above version otherwise connection time out error might come)
-     ChromeDriver 106.0.5249.61(No Need to download,its already added in Project)  
+     Version 108.0.5359.98 (Please use this chrome browser and above version otherwise connection time out error might come)
+     ChromeDriver 108.0.5359.71(No Need to download,its already added in Project)  
 
 
 

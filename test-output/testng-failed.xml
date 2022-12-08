@@ -3,15 +3,15 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sogeti.testRunner.SogetiTestRunner">
+      <class name="com.stroeer.testRunner.StroeerTestRunner">
         <methods>
-          <include name="setUpClass"/>
           <include name="writeExtentReport"/>
-          <include name="feature" invocation-numbers="1"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.sogeti.testRunner.SogetiTestRunner -->
+      </class> <!-- com.stroeer.testRunner.StroeerTestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
