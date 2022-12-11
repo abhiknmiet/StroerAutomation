@@ -21,18 +21,19 @@ public void openCartValidateTotalPriceQuantity() {
 	// get price on cart Page
 
 	String itemPriceOnCartPage = javaScript_GetText(
-			"return document.getElementById('sc-subtotal-amount-activecart').innerText;");
+			"return document.getElementById('sc-subtotal-amount-activecart').innerText.trim();");
 
-	String[] itemValue = itemPriceOnCartPage.stripLeading().split("\n");
-	String priceOfSingleItem = itemValue[0].replace("$", " ");
+	
+	String priceOfTotalItem = itemPriceOnCartPage.replace("$", "").trim();
 
-	System.out.println(priceOfSingleItem);
+	System.out.println("Price of Total Item::"+priceOfTotalItem);
 
-	// Validating price of item<facing issue while comparing double value>
+	// Validating price of item
+	
 
-	Assert.assertTrue(true, "Price of total item is not correct!!");
+	Assert.assertTrue(priceOfTotalItem.equalsIgnoreCase(String.valueOf(AmazonHomePage.totalItemPriceBeforCart)), "Price of total item is not correct!!");
 
-	Reporter.addStepLog("Price of total item is correct!!");
+	Reporter.addStepLog("Price of total item on Cart Page is correct!!");
 	takeScreenShot();
 	// get quantity
 
@@ -49,7 +50,7 @@ public void openCartValidateTotalPriceQuantity() {
 	}
 
 public void reduceQuantityOfItem(String quantity) {
-	//reduce quantity
+	//reduce quantity on cart page
 	selectValueFromDropDown(By.xpath(AmazonHomePageLocators.ADD_QUANTITY), quantity);
 	sleep(30);
 	takeScreenShot();
@@ -60,15 +61,15 @@ public void validateTotalPriceQuantity() {
 	// get price on cart Page after reduce quantity
 
 	String itemPriceOnCartPage = javaScript_GetText(
-			"return document.getElementById('sc-subtotal-amount-activecart').innerText;");
+			"return document.getElementById('sc-subtotal-amount-activecart').innerText.trim();");
 
-	String[] itemValueCartPage = itemPriceOnCartPage.split("\n");
-	String priceOfItem = itemValueCartPage[0].replace("$", "");
-	System.out.println(priceOfItem);
+
+	String priceOfItemOnCartPage = itemPriceOnCartPage.replace("$", "");
+	System.out.println("Price of Item on cart page after reduced quantity::"+priceOfItemOnCartPage);
 
 	// Validating price of item
 
-	Assert.assertTrue(true, "Price of total item is not correct!!");
+	Assert.assertTrue(priceOfItemOnCartPage.equalsIgnoreCase(AmazonHomePage.priceOfSingleItem), "Price of total item is not correct!!");
 
 	Reporter.addStepLog("Price of total item after quantity change is correct!!");
 
@@ -76,7 +77,7 @@ public void validateTotalPriceQuantity() {
 
 	String totalQuantityCart = getWebElement(By.xpath(AmazonCartPageLocators.ITEM_QUANTITY_COUNT)).getText();
 
-	System.out.println("Quantity on cart Page::" + totalQuantityCart);
+	System.out.println("Quantity on cart Page after reduced::" + totalQuantityCart);
 
 	Assert.assertTrue(totalQuantityCart.contains("1"), "Quantity on cart page after change is not correct!!");
 
